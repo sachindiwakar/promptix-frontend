@@ -1,5 +1,43 @@
-<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
-  <text x="20" y="70" font-size="40" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="600">
-    Promptix<tspan fill="#5044E5">AI</tspan>
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .brand { fill: #5044e5; }
+      .wordmark {
+        font-family: Inter, Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.8px;
+      }
+    </style>
+  </defs>
+
+  <!-- Bigger icon -->
+  <svg x="40" y="30" width="150" height="150" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Larger neural nodes -->
+  <circle cx="14" cy="14" r="4" fill="#5044E5"/>
+  <circle cx="50" cy="14" r="4" fill="#5044E5"/>
+  <circle cx="14" cy="50" r="4" fill="#5044E5"/>
+  <circle cx="50" cy="50" r="4" fill="#5044E5"/>
+
+  <!-- Thicker connections -->
+  <line x1="32" y1="32" x2="14" y2="14" stroke="#5044E5" stroke-width="3"/>
+  <line x1="32" y1="32" x2="50" y2="14" stroke="#5044E5" stroke-width="3"/>
+  <line x1="32" y1="32" x2="14" y2="50" stroke="#5044E5" stroke-width="3"/>
+  <line x1="32" y1="32" x2="50" y2="50" stroke="#5044E5" stroke-width="3"/>
+
+  <!-- Bigger center circle -->
+  <circle cx="32" cy="32" r="16" fill="#5044E5"/>
+
+  <!-- Large bold P -->
+  <text x="32" y="40" text-anchor="middle" font-size="26" fill="white" font-family="Arial, sans-serif" font-weight="900">
+    P
+  </text>
+</svg>
+
+  </svg>
+
+  <!-- Bigger text -->
+  <text x="220" y="135" class="wordmark brand" font-size="90">
+    Promptix AI
   </text>
 </svg>
