@@ -18,25 +18,17 @@ const RemoveBackground = () => {
           <Sparkles className="w-6 text-[#FF4938]" />
           <h1 className="text-xl font-semibold">Background Remover</h1>
         </div>
-        <label className="mt-6 block text-sm font-medium text-gray-700">
-          <div className="flex items-center gap-2 mb-2">
-            <File className="w-4 h-4" />
-            Upload Image
-          </div>
+        <p className="mt-6 text-sm font-medium flex items-center">
+          <File className="w-5 h-5 m-2" /> Upload Image
+        </p>
 
-          <div className="flex items-center justify-center w-full px-4 py-6 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-gray-50 transition">
-            <span className="text-sm text-gray-500">
-              Click to upload or drag & drop
-            </span>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => setInput(e.target.files[0])}
-              className="hidden"
-              required
-            />
-          </div>
-        </label>
+        <input
+          onChange={(e) => setInput(e.target.files[0])}
+          type="file"
+          accept="image/*"
+          className="w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300 text-gray-600"
+          required
+        />
 
         <button className="w-full flex justify-center items-center gap-2 bg-linear-to-r from-[#F6AB41] to-[#FF4938] text-white px-4 py-2 mt-6 text-sm rounded-lg cursor-pointer">
           <Eraser className="w-5" />
