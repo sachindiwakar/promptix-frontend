@@ -42,7 +42,7 @@ const ReviewResume = () => {
       {/* Right Side */}
       <div
         className="w-full max-w-lg p-4 bg-white rounded-lg flex flex-col
-       border border-gray-200 min-h-95"
+       border border-gray-200 min-h-95 max-h-150"
       >
         <div className="flex items-center gap-3">
           <FileText className="w-5 h-5 text-[#00DA83]" />
