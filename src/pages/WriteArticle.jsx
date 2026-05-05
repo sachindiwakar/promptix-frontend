@@ -28,7 +28,7 @@ const WriteArticle = () => {
         <p className="mt-6 text-sm font-medium">Article Topic</p>
         <input
           value={input}
-          onChange={() => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
           type="text"
           className="w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300"
           placeholder="The role of AI in web development is..."
