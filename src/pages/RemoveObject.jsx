@@ -31,6 +31,10 @@ const RemoveObject = () => {
           required
         />
 
+        <p className="text-xs text-gray-500 font-light mt-1">
+          Supports JPG, PNG, and other image formats.
+        </p>
+
         <p className="mt-6 text-sm font-medium">
           Describe object name to remove
         </p>
