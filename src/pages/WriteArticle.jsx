@@ -35,7 +35,7 @@ const WriteArticle = () => {
           },
         },
       );
-      if (data) {
+      if (data.content) {
         setContent(data.content);
       } else {
         toast.error(data.message);
