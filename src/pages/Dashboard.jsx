@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { dummyCreationData } from "../assets/assets";
 import { Gem, Sparkles } from "lucide-react";
-import { useUser } from "@clerk/react";
+import { useAuth, useUser } from "@clerk/react";
 import CreationItem from "../components/CreationItem";
 
 const Dashboard = () => {
   const { user } = useUser();
-  const plan = user?.publicMetadata?.plan;
+
+  const { has } = useAuth();
+
+  const hasPremiumPlan = has?.({
+    plan: "premium",
+  });
+
   const [creations, setCreations] = useState([]);
 
   const getDashboardData = async () => {
@@ -33,8 +39,7 @@ const Dashboard = () => {
           <div className="text-slate-600">
             <p className="text-sm">Acive Plan</p>
             <h2 className="text-xl font-semibold">
-              {" "}
-              {plan === "premium" ? "Premium" : "Free"} Plan
+              {hasPremiumPlan ? "Premium" : "Free"} Plan
             </h2>
           </div>
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#FF61C5] to-[#9E53EE] text-white flex justify-center items-center">

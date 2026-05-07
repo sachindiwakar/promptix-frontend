@@ -1,4 +1,4 @@
-import { useClerk, useUser } from "@clerk/react";
+import { useAuth, useClerk, useUser } from "@clerk/react";
 import {
   Eraser,
   FileText,
@@ -55,10 +55,15 @@ const navItems = [
 ];
 
 const Sidebar = ({ sidebar, setSidebar }) => {
-  const { user, isLoaded } = useUser();
-  if (!isLoaded) return null;
+  const { user } = useUser();
+
+  const { has } = useAuth();
+
+  const hasPremiumPlan = has?.({
+    plan: "premium",
+  });
+
   const { signOut, openUserProfile } = useClerk();
-  const plan = user?.publicMetadata?.plan;
 
   return (
     <div
@@ -110,7 +115,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
           <div>
             <h1 className="text-sm font-medium">{user?.fullName}</h1>
             <p className="text-xs text-gray-500">
-              {plan === "premium" ? "Premium" : "Free"} Plan
+              {hasPremiumPlan ? "Premium" : "Free"} Plan
             </p>
           </div>
         </div>
