@@ -80,27 +80,30 @@ export const AiToolsData = [
 
 export const dummyTestimonialData = [
   {
-    image: assets.profile_img_1,
-    name: "John Doe",
-    title: "Marketing Director, TechCorp",
+    image:
+      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    name: "Sam Johnson",
+    title: "Startup Founder",
     content:
-      "ContentAI has revolutionized our content workflow. The quality of the articles is outstanding, and it saves us hours of work every week.",
+      "Promptix has completely streamlined our content creation workflow. From blog ideas to polished copy, everything feels faster and more professional.",
     rating: 4,
   },
   {
-    image: assets.profile_img_1,
-    name: "Jane Smith",
-    title: "Content Creator, TechCorp",
+    image:
+      "https://images.unsplash.com/photo-1611456531646-2a68d6df2723?q=80&w=200&h=200&auto=format&fit=crop",
+    name: "Emily Rodriguez",
+    title: "Freelance Content Writer",
     content:
-      "ContentAI has made our content creation process effortless. The AI tools have helped us produce high-quality content faster than ever before.",
+      "Promptix helped me boost productivity and improve writing quality for my clients. The resume review and content tools are especially impressive.",
     rating: 5,
   },
   {
-    image: assets.profile_img_1,
-    name: "David Lee",
-    title: "Content Writer, TechCorp",
+    image:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+    name: "Michael Chen",
+    title: "Digital Marketing Specialist",
     content:
-      "ContentAI has transformed our content creation process. The AI tools have helped us produce high-quality content faster than ever before.",
+      "The AI tools inside Promptix are incredibly intuitive. We now generate high-quality marketing content in minutes instead of hours.",
     rating: 4,
   },
 ];
