@@ -1,22 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { dummyCreationData } from "../assets/assets";
-import { Gem, Sparkles } from "lucide-react";
-import { useAuth, useUser } from "@clerk/react";
 import CreationItem from "../components/CreationItem";
+import { Gem, Sparkles } from "lucide-react";
+import axios from "axios";
+import { useAuth, useUser } from "@clerk/react";
+import toast from "react-hot-toast";
+
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 const Dashboard = () => {
   const { user } = useUser();
 
-  const { has } = useAuth();
+  const { has, getToken } = useAuth();
 
   const hasPremiumPlan = has?.({
     plan: "premium",
   });
 
   const [creations, setCreations] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getDashboardData = async () => {
-    setCreations(dummyCreationData);
+    try {
+      const { data } = await axios.get("/api/user/get-user-creations", {
+        headers: {
+          Authorization: `Bearer ${await getToken()}`,
+        },
+      });
+
+      if (data.creations) {
+        setCreations(data.creations);
+      } else {
+        toast.error(error.response?.data?.message || error.message);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || error.message);
+    }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -49,9 +68,17 @@ const Dashboard = () => {
       </div>
       <div className="space-y-3">
         <p className="mt-6 mb-4">Recent Creations</p>
-        {creations.map((item) => (
-          <CreationItem key={item.id} item={item} />
-        ))}
+
+        {loading ? (
+          <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+              <p className="text-sm text-gray-500">Loading creations...</p>
+            </div>
+          </div>
+        ) : (
+          creations.map((item) => <CreationItem key={item.id} item={item} />)
+        )}
       </div>
     </div>
   );
