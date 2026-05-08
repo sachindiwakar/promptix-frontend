@@ -1,16 +1,105 @@
-# React + Vite
+# PromptixAI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend for PromptixAI — an AI-powered SaaS platform built with React, Vite, Tailwind CSS, and Clerk Authentication.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- AI Article Generator
+- Blog Title Generator
+- AI Image Generator
+- Background Remover
+- Object Remover
+- Resume Reviewer
+- Community Showcase
+- Clerk Authentication
+- Clerk Billing & Subscriptions
+- Responsive Dashboard
+- Modern UI with Tailwind CSS
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- Clerk Authentication
+- Clerk Billing
+- Lucide React Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <your-frontend-repo-url>
+```
+
+Go to frontend directory:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the frontend root:
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+VITE_API_URL=your_backend_url
+```
+
+---
+
+## Folder Structure
+
+```bash
+src/
+ ├── assets/
+ ├── components/
+ ├── pages/
+ ├── App.jsx
+ ├── main.jsx
+```
+
+---
+
+## Run Development Server
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## Build For Production
+
+```bash
+npm run build
+```
+
+---
+
+## Deployment
+
+Frontend deployed using:
+
+- Vercel
